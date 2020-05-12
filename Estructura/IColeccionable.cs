@@ -4,12 +4,12 @@ using System.Text;
 
 namespace Metodologia.Esructura
 {
-    interface IColeccionable
+    public interface IColeccionable
     {
-        int Cuantos();
-        IComparable Minimo();
-        IComparable Maximo();
-        void Agregar(IComparable o);
-        bool Contiene(IComparable o);
+        public int Cuantos();
+        public IComparable Minimo();
+        public IComparable Maximo();
+        public void Agregar(IComparable o);
+        public bool Contiene(IComparable o);
     }
 }

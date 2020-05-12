@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Metodologia.Esructura
 {
-    class Numero : IComparable
+    public class Numero : IComparable
     {
         private int valor;
 

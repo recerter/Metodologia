@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Metodologia.Esructura
 {
-    class Cola : IColeccionable
+    public class Cola : IColeccionable
     {
         readonly List<IComparable> elementos;
         public Cola()

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Metodologia.Esructura
 {
-    class ColeccionMultiple : IColeccionable
+    public class ColeccionMultiple : IColeccionable
     {
         readonly Pila pila;
         readonly Cola cola;

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Metodologia.Esructura
 {
-    class Persona:IComparable
+    public class Persona :IComparable
     {
         private string nombre;
         private int dni;

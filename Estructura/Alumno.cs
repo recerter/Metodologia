@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Metodologia.Esructura
 {
-    class Alumno:Persona, IComparable
+    public class Alumno:Persona, IComparable
     {
         private int legajo;
         private int promedio;
