@@ -2,28 +2,28 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Metodologia.Esructura
+namespace Metodologia.Estructura
 {
     public class Pila : IColeccionable
     {
-        readonly List<IComparable> elementos;
+        readonly List<object> elementos;
         public Pila()
         {
-            elementos = new List<IComparable>();
+            elementos = new List<object>();
         }
 
-        public void Push(IComparable value)
+        public void Push(object value)
         {
             elementos.Add(value);
         }
-        public IComparable Pop()
+        public object Pop()
         {
             var value = elementos[elementos.Count-1];
             elementos.RemoveAt(elementos.Count-1);
             return value;
         }
-
-        public IComparable Top()
+        
+        public object Top()
         {
             return elementos[elementos.Count-1];
         }
@@ -37,23 +37,23 @@ namespace Metodologia.Esructura
             return elementos.Count;
         }
 
-        public IComparable Minimo()
+        public object Minimo()
         {
-            IComparable min = elementos[0];
+            object min = elementos[0];
             foreach(IComparable e in elementos)
             {
-                if (e.sosMenor(min))
+                if (e.SosMenor(min))
                     min = e;
             }
             return min;
         }
 
-        public IComparable Maximo()
+        public object Maximo()
         {
-            IComparable max = elementos[0];
+            object max = elementos[0];
             foreach (IComparable e in elementos)
             {
-                if (e.sosMayor(max))
+                if (e.SosMayor(max))
                     max = e;
             }
             return max;
@@ -68,7 +68,7 @@ namespace Metodologia.Esructura
         {
             foreach(IComparable e in elementos)
             {
-                if (e.sosIgual(o))
+                if (e.SosIgual(o))
                     return true;
             }
             return false;

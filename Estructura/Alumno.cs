@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 
-namespace Metodologia.Esructura
+namespace Metodologia.Estructura
 {
     public class Alumno:Persona, IComparable
     {
@@ -39,20 +39,20 @@ namespace Metodologia.Esructura
             }
         }
 
-        public new bool sosIgual(IComparable o)
+        public new bool SosIgual(IComparable o)
         {
             Alumno n = o as Alumno;
             return Legajo == n.Legajo;
         }
         
-        public new bool sosMayor(IComparable o)
+        public new bool SosMayor(IComparable o)
         {
             Alumno n = o as Alumno;
             return Legajo > n.Legajo;
         }
         
 
-        public new bool sosMenor(IComparable o)
+        public new bool SosMenor(IComparable o)
         {
             Alumno n = o as Alumno;
             return Legajo < n.Legajo;

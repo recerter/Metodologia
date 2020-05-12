@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Metodologia.Esructura
+namespace Metodologia.Estructura
 {
     public class ColeccionMultiple : IColeccionable
     {
@@ -32,13 +32,13 @@ namespace Metodologia.Esructura
             return pila.Cuantos() + cola.Cuantos();
         }
 
-        public IComparable Maximo()
+        public object Maximo()
         {
             IComparable maxcola;
             IComparable maxpila;
-            maxcola = cola.Maximo();
-            maxpila = pila.Maximo();
-            if (maxcola.sosMayor(maxpila))
+            maxcola = (IComparable)cola.Maximo();
+            maxpila = (IComparable)pila.Maximo();
+            if (maxcola.SosMayor(maxpila))
             {
                 return maxcola;
             }
@@ -48,13 +48,13 @@ namespace Metodologia.Esructura
             }
         }
 
-        public IComparable Minimo()
+        public object Minimo()
         {
             IComparable mincola;
             IComparable minpila;
-            mincola = cola.Minimo();
-            minpila = pila.Minimo();
-            if (mincola.sosMenor(minpila))
+            mincola = (IComparable)cola.Minimo();
+            minpila = (IComparable)pila.Minimo();
+            if (mincola.SosMenor(minpila))
             {
                 return mincola;
             }

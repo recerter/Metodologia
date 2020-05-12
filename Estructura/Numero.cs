@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Metodologia.Esructura
+namespace Metodologia.Estructura
 {
     public class Numero : IComparable
     {
@@ -25,19 +25,19 @@ namespace Metodologia.Esructura
             }
         }
 
-        public bool sosIgual(IComparable o)
+        public bool SosIgual(object o)
         {
             Numero n = o as Numero;
             return Valor == n.Valor;
         }
 
-        public bool sosMayor(IComparable o)
+        public bool SosMayor(object o)
         {
             Numero n = o as Numero;
             return Valor > n.Valor;
         }
 
-        public bool sosMenor(IComparable o)
+        public bool SosMenor(object o)
         {
             Numero n = o as Numero;
             return Valor < n.Valor;

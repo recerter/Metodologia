@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Metodologia.Esructura
+namespace Metodologia.Estructura
 {
     public interface IComparable
     {
-        public bool sosIgual(IComparable o);
-        public bool sosMenor(IComparable o);
-        public bool sosMayor(IComparable o);
+        public bool SosIgual(object o);
+        public bool SosMenor(object o);
+        public bool SosMayor(object o);
     }
 }

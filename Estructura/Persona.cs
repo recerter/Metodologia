@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Metodologia.Esructura
+namespace Metodologia.Estructura
 {
     public class Persona :IComparable
     {
@@ -39,19 +39,19 @@ namespace Metodologia.Esructura
             }
         }
 
-        public bool sosIgual(IComparable o)
+        public bool SosIgual(object o)
         {
             Persona n = o as Persona;
             return Dni == n.Dni;
         }
 
-        public bool sosMenor(IComparable o)
+        public bool SosMenor(object o)
         {
             Persona n = o as Persona;
             return Dni < n.Dni;
         }
 
-        public bool sosMayor(IComparable o)
+        public bool SosMayor(object o)
         {
             Persona n = o as Persona;
             return Dni > n.Dni;
