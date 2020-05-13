@@ -11,7 +11,7 @@ namespace Metodologia.Strategy
 
         public static void Run()
         {
-            Diccionario p = new Diccionario();
+            Pila p = new Pila();
             Estructura.Main.LlenarAlumnos(p);
             Console.WriteLine("Nombre");
             CambiarEstrategia(p, new EstrategiaCompararNombre());
@@ -26,13 +26,13 @@ namespace Metodologia.Strategy
             CambiarEstrategia(p, new EstrategiaCompararDni());
             Estructura.Main.Informar(p);
         }
-        public static void CambiarEstrategia(IColeccionable personas, IStrategyComparar estrategia)
+        public static void CambiarEstrategia(IColeccionable alumnos, IStrategyComparar estrategia)
         {
-            IIteradorColeccion iter = personas.CrearIterador();
+            IIteradorColeccion iter = alumnos.CrearIterador();
 
             while (!iter.End())
             {
-                Persona unaPersona = (Persona)iter.Next();
+                Alumno unaPersona = (Alumno)iter.Next();
                 unaPersona.Estrategia = estrategia;
             }
         }

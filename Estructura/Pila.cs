@@ -25,7 +25,7 @@ namespace Metodologia.Estructura
         }
         public IComparable PopX(int puntero)
         {
-            IComparable firstPila = this.elementos[puntero];
+            IComparable firstPila = elementos[puntero];
             return firstPila;
         }
 

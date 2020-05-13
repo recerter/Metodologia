@@ -7,17 +7,17 @@ namespace Metodologia.Strategy
 {
     public class EstrategiaCompararLegajo:IStrategyComparar
     {
-        public bool SosIgual(Estructura.IComparable a, Estructura.IComparable b)
+        public bool SosIgual(Alumno a, Alumno b)
         {
             return ((Alumno)a).Legajo == ((Alumno)b).Legajo;
         }
 
-        public bool SosMayor(Estructura.IComparable a, Estructura.IComparable b)
+        public bool SosMayor(Alumno a, Alumno b)
         {
             return ((Alumno)a).Legajo > ((Alumno)b).Legajo;
         }
 
-        public bool SosMenor(Estructura.IComparable a, Estructura.IComparable b)
+        public bool SosMenor(Alumno a, Alumno b)
         {
             return ((Alumno)a).Legajo < ((Alumno)b).Legajo;
         }

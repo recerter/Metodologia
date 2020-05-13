@@ -41,17 +41,17 @@ namespace Metodologia.Estructura
             }
         }
 
-        public bool SosIgual(Persona comparable)
+        public bool SosIgual(Alumno comparable)
         {
             return Estrategia.SosIgual(this, comparable);
         }
 
-        public bool SosMenor(Persona comparable)
+        public bool SosMenor(Alumno comparable)
         {
             return Estrategia.SosMenor(this, comparable);
         }
 
-        public bool SosMayor(Persona comparable)
+        public bool SosMayor(Alumno comparable)
         {
             return Estrategia.SosMayor(this, comparable);
         }

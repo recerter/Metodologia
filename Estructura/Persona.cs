@@ -60,18 +60,18 @@ namespace Metodologia.Estructura
 
         public bool SosIgual(IComparable o)
         {
-            return Estrategia.SosIgual(this, (Persona)o);
+            return Estrategia.SosIgual((Alumno)this, (Alumno)o);
         }
 
         public bool SosMenor(IComparable o)
         {
-            return Estrategia.SosMenor(this, (Persona)o);
+            return Estrategia.SosMenor((Alumno)this, (Alumno)o);
         }
 
         public bool SosMayor(IComparable o)
         {
-             return Estrategia.SosMayor(this, (Persona)o);
-         }
+             return Estrategia.SosMayor((Alumno)this, (Alumno)o);
+        }
        
     }
 }

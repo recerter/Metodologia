@@ -15,7 +15,7 @@ namespace Metodologia.Iterator
         }
         public bool End()
         {
-            return lista.isEmpty();
+            return actual < this.lista.Cuantos() ? false : true;
         }
 
         public void First()

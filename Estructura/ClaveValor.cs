@@ -15,17 +15,17 @@ namespace Metodologia.Estructura
         }
         public bool SosIgual(IComparable comparable)
         {
-            return this.valor.SosIgual(comparable);
+            return valor.SosIgual(comparable);
         }
 
         public bool SosMayor(IComparable comparable)
         {
-            return this.valor.SosMayor(comparable);
+            return valor.SosMayor(comparable);
         }
 
         public bool SosMenor(IComparable comparable)
         {
-            return this.valor.SosMenor(comparable);
+            return valor.SosMenor(comparable);
         }
     }
 }

@@ -7,17 +7,17 @@ namespace Metodologia.Strategy
 {
     public class EstrategiaCompararPromedio:IStrategyComparar
     {
-        public bool SosIgual(Estructura.IComparable a, Estructura.IComparable b)
+        public bool SosIgual(Alumno a, Alumno b)
         {
             return ((Alumno)a).Promedio == ((Alumno)b).Promedio;
         }
 
-        public bool SosMayor(Estructura.IComparable a, Estructura.IComparable b)
+        public bool SosMayor(Alumno a, Alumno b)
         {
             return ((Alumno)a).Promedio > ((Alumno)b).Promedio;
         }
 
-        public bool SosMenor(Estructura.IComparable a, Estructura.IComparable b)
+        public bool SosMenor(Alumno a, Alumno b)
         {
             return ((Alumno)a).Promedio < ((Alumno)b).Promedio;
         }
