@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Metodologia.Strategy
 {
-    public class EstrategiaComprarPromedio:IStrategyComparar
+    public class EstrategiaCompararPromedio:IStrategyComparar
     {
         public bool SosIgual(Estructura.IComparable a, Estructura.IComparable b)
         {

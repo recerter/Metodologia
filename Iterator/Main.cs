@@ -13,10 +13,10 @@ namespace Metodologia.Iterator
             Cola c = new Cola();
             Conjunto newconjunto = new Conjunto();
             Diccionario newdiccionario = new Diccionario();
-            Estructura.Main.llenarAlumnos(p);
-            Estructura.Main.llenarAlumnos(c);
-            Estructura.Main.llenarAlumnos(newconjunto);
-            Estructura.Main.llenarAlumnos(newdiccionario);
+            Estructura.Main.LlenarAlumnos(p);
+            Estructura.Main.LlenarAlumnos(c);
+            Estructura.Main.LlenarAlumnos(newconjunto);
+            Estructura.Main.LlenarAlumnos(newdiccionario);
             Console.WriteLine("Imprime Pila");
             ImprimirElementos(p);
             Console.WriteLine("Imprime Cola");
@@ -37,5 +37,6 @@ namespace Metodologia.Iterator
                      elemento.Nombre, elemento.Dni, elemento.Legajo, elemento.Promedio);
             }
         }
+
     }
 }

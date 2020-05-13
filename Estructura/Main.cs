@@ -23,17 +23,8 @@ namespace Metodologia.Estructura
             Console.WriteLine("Cant: " + o.Cuantos());
             Console.WriteLine("Min: " + o.Minimo());
             Console.WriteLine("Max: " + o.Maximo());
-            IComparable c = new Numero(Int32.Parse(Console.ReadLine()));
-            if (o.Contiene(c))
-            {
-                Console.WriteLine("El elemento leido esta en la coleccion");
-            }
-            else
-            {
-                Console.WriteLine("El elemento leido no esta en la coleccion");
-            }
-
         }
+       
         public static void InformarAlumno(IColeccionable o)
         {
             Console.WriteLine("Seleccione por que quiere comparar\n 1) Legajo \n 2) Dni ");

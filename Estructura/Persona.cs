@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Metodologia.Iterator;
+using Metodologia.Strategy;
 
 namespace Metodologia.Estructura
 {
@@ -8,11 +10,13 @@ namespace Metodologia.Estructura
     {
         private string nombre;
         private int dni;
+        private IStrategyComparar estrategia;
 
         public Persona(string nombre, int dni)
         {
             this.nombre = nombre;
             this.dni = dni;
+            Estrategia = new EstrategiaCompararNombre();
         }
 
         public string Nombre
@@ -37,6 +41,21 @@ namespace Metodologia.Estructura
             {
                 this.dni = value;
             }
+        }
+        public IStrategyComparar Estrategia
+        {
+            get
+            {
+                return this.estrategia;
+            }
+            set
+            {
+                this.estrategia = value;
+            }
+        }
+        public Persona()
+        {
+            Estrategia = new EstrategiaCompararNombre();
         }
 
         public bool SosIgual(object o)

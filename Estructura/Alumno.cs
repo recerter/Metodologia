@@ -60,7 +60,7 @@ namespace Metodologia.Estructura
        
         public override string ToString()
         {
-            return string.Format("[Alumno: Nombre={0} Legajo= {1} DNI= {2}]", Nombre, legajo, Dni);
+            return string.Format("[Alumno: Nombre={0} Legajo= {1} DNI= {2} Promedio= {3}]", Nombre, legajo, Dni, Promedio);
         }
     }
 }
