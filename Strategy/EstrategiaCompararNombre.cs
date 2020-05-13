@@ -7,19 +7,19 @@ namespace Metodologia.Strategy
 {
     public class EstrategiaCompararNombre:IStrategyComparar
     {
-        public bool SosIgual(Alumno a, Alumno b)
+        public bool SosIgual(Estructura.IComparable a, Estructura.IComparable b)
         {
-            return a.Nombre == b.Nombre;
+            return ((Persona)a).Nombre == ((Persona)b).Nombre;
         }
 
-        public bool SosMayor(Alumno a, Alumno b)
+        public bool SosMayor(Estructura.IComparable a, Estructura.IComparable b)
         {
-            return b.Nombre.CompareTo(a.Nombre) > 0 ? true : false;
+            return ((Alumno)b).Nombre.CompareTo(((Alumno)a).Nombre) < 0 ? true : false;
         }
 
-        public bool SosMenor(Alumno a, Alumno b)
+        public bool SosMenor(Estructura.IComparable a, Estructura.IComparable b)
         {
-            return b.Nombre.CompareTo(a.Nombre) < 0 ? true : false;
+            return ((Persona)b).Nombre.CompareTo(((Persona)a).Nombre) > 0 ? true : false;
         }
     }
 }
