@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Observer\" />
+    <Folder Include="FactoryMethod\" />
   </ItemGroup>
 
 </Project>
