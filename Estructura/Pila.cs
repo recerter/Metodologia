@@ -7,24 +7,29 @@ namespace Metodologia.Estructura
 {
     public class Pila : IColeccionable
     {
-        readonly List<object> elementos;
+        readonly List<IComparable> elementos;
         public Pila()
         {
-            elementos = new List<object>();
+            elementos = new List<IComparable>();
         }
 
-        public void Push(object value)
+        public void Push(IComparable value)
         {
             elementos.Add(value);
         }
-        public object Pop()
+        public IComparable Pop()
         {
             var value = elementos[elementos.Count-1];
             elementos.RemoveAt(elementos.Count-1);
             return value;
         }
-        
-        public object Top()
+        public IComparable PopX(int puntero)
+        {
+            IComparable firstPila = this.elementos[puntero];
+            return firstPila;
+        }
+
+        public IComparable Top()
         {
             return elementos[elementos.Count-1];
         }
@@ -38,9 +43,9 @@ namespace Metodologia.Estructura
             return elementos.Count;
         }
 
-        public object Minimo()
+        public IComparable Minimo()
         {
-            object min = elementos[0];
+            IComparable min = elementos[0];
             foreach(IComparable e in elementos)
             {
                 if (e.SosMenor(min))
@@ -49,9 +54,9 @@ namespace Metodologia.Estructura
             return min;
         }
 
-        public object Maximo()
+        public IComparable Maximo()
         {
-            object max = elementos[0];
+            IComparable max = elementos[0];
             foreach (IComparable e in elementos)
             {
                 if (e.SosMayor(max))

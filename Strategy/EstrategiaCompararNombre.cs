@@ -17,7 +17,7 @@ namespace Metodologia.Strategy
             return ((Persona)b).Nombre.CompareTo(((Persona)a).Nombre) > 0 ? true : false;
         }
 
-        public bool Sosmenor(Estructura.IComparable a, Estructura.IComparable b)
+        public bool SosMenor(Estructura.IComparable a, Estructura.IComparable b)
         {
             return ((Persona)b).Nombre.CompareTo(((Persona)a).Nombre) < 0 ? true : false;
         }

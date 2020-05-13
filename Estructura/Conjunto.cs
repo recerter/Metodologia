@@ -7,12 +7,12 @@ namespace Metodologia.Estructura
 {
     public class Conjunto : IColeccionable
     {
-        private List<object> almacenamiento;
-        public List<object> Almacenamiento { get { return almacenamiento; } private set { this.almacenamiento = value; } }
+        private List<IComparable> almacenamiento;
+        public List<IComparable> Almacenamiento { get { return almacenamiento; } private set { this.almacenamiento = value; } }
 
         public Conjunto()
         {
-            almacenamiento = new List<object>();
+            almacenamiento = new List<IComparable>();
         }
         public void Agregar(IComparable elemento)
         {
@@ -44,9 +44,9 @@ namespace Metodologia.Estructura
             return this.almacenamiento.Count;
         }
 
-        public object Maximo()
+        public IComparable Maximo()
         {
-            object max = almacenamiento[0];
+            IComparable max = almacenamiento[0];
             foreach (IComparable e in almacenamiento)
             {
                 if (e.SosMayor(max))
@@ -55,9 +55,9 @@ namespace Metodologia.Estructura
             return max;
         }
 
-        public object Minimo()
+        public IComparable Minimo()
         {
-            object min = almacenamiento[0];
+            IComparable min = almacenamiento[0];
             foreach (IComparable e in almacenamiento)
             {
                 if (e.SosMenor(min))
@@ -70,5 +70,6 @@ namespace Metodologia.Estructura
         {
             return new IteradorConjunto(this);
         }
+        
     }
 }

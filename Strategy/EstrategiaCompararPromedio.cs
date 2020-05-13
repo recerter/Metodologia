@@ -17,7 +17,7 @@ namespace Metodologia.Strategy
             return ((Alumno)a).Promedio > ((Alumno)b).Promedio;
         }
 
-        public bool Sosmenor(Estructura.IComparable a, Estructura.IComparable b)
+        public bool SosMenor(Estructura.IComparable a, Estructura.IComparable b)
         {
             return ((Alumno)a).Promedio < ((Alumno)b).Promedio;
         }

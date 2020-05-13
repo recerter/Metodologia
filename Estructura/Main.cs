@@ -20,9 +20,13 @@ namespace Metodologia.Estructura
 
         public static void Informar(IColeccionable o)
         {
-            Console.WriteLine("Cant: " + o.Cuantos());
-            Console.WriteLine("Min: " + o.Minimo());
-            Console.WriteLine("Max: " + o.Maximo());
+            Alumno maximo = (Alumno)o.Maximo();
+            Alumno minimo = (Alumno)o.Minimo();
+            Console.WriteLine("Elementos de la Coleccion:\n" +
+                "Maximo:\n\tAlumno: {0}\tDNI: {1}\tLegajo: {2}\tPromedio: {3}\n" +
+                "Minimo:\n\tAlumno: {4}\tDNI: {5}\tLegajo: {6}\tPromedio: {7}",
+                     maximo.Nombre, maximo.Dni, maximo.Legajo, maximo.Promedio,
+                     minimo.Nombre, minimo.Dni, minimo.Legajo, minimo.Promedio);
         }
        
         public static void InformarAlumno(IColeccionable o)

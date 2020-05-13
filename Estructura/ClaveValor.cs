@@ -13,17 +13,17 @@ namespace Metodologia.Estructura
             this.clave = clave;
             this.valor = valor;
         }
-        public bool SosIgual(object comparable)
+        public bool SosIgual(IComparable comparable)
         {
             return this.valor.SosIgual(comparable);
         }
 
-        public bool SosMayor(object comparable)
+        public bool SosMayor(IComparable comparable)
         {
             return this.valor.SosMayor(comparable);
         }
 
-        public bool SosMenor(object comparable)
+        public bool SosMenor(IComparable comparable)
         {
             return this.valor.SosMenor(comparable);
         }

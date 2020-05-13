@@ -11,7 +11,7 @@ namespace Metodologia.Strategy
 
         public static void Run()
         {
-            Pila p = new Pila();
+            Diccionario p = new Diccionario();
             Estructura.Main.LlenarAlumnos(p);
             Console.WriteLine("Nombre");
             CambiarEstrategia(p, new EstrategiaCompararNombre());

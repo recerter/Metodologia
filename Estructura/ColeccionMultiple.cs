@@ -38,7 +38,7 @@ namespace Metodologia.Estructura
             return pila.Cuantos() + cola.Cuantos();
         }
 
-        public object Maximo()
+        public IComparable Maximo()
         {
             IComparable maxcola;
             IComparable maxpila;
@@ -54,7 +54,7 @@ namespace Metodologia.Estructura
             }
         }
 
-        public object Minimo()
+        public IComparable Minimo()
         {
             IComparable mincola;
             IComparable minpila;

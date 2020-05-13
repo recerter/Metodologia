@@ -25,19 +25,19 @@ namespace Metodologia.Estructura
             }
         }
 
-        public bool SosIgual(object o)
+        public bool SosIgual(IComparable o)
         {
             Numero n = o as Numero;
             return Valor == n.Valor;
         }
 
-        public bool SosMayor(object o)
+        public bool SosMayor(IComparable o)
         {
             Numero n = o as Numero;
             return Valor > n.Valor;
         }
 
-        public bool SosMenor(object o)
+        public bool SosMenor(IComparable o)
         {
             Numero n = o as Numero;
             return Valor < n.Valor;

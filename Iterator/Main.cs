@@ -32,9 +32,8 @@ namespace Metodologia.Iterator
             IIteradorColeccion iter = coleccion.CrearIterador();
             while (!iter.End())
             {
-                Alumno elemento = (Alumno)iter.Next();
-                Console.WriteLine("Alumno: {0}\tDNI: {1}\tLegajo: {2}\tPromedio: {3}",
-                     elemento.Nombre, elemento.Dni, elemento.Legajo, elemento.Promedio);
+                Object elemento = (object)iter.Next();
+                Console.WriteLine(elemento);
             }
         }
 

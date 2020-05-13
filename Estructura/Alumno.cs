@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Metodologia.Strategy;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -14,6 +15,7 @@ namespace Metodologia.Estructura
         {
             this.legajo = legajo;
             this.promedio = promedio;
+            base.Estrategia = new EstrategiaCompararNombre();
         }
 
         public int Legajo
@@ -39,28 +41,25 @@ namespace Metodologia.Estructura
             }
         }
 
-        public bool SosIgual(IComparable o)
+        public bool SosIgual(Persona comparable)
         {
-            Alumno n = o as Alumno;
-            return Legajo == n.Legajo;
+            return Estrategia.SosIgual(this, comparable);
         }
-        
-        public bool SosMayor(IComparable o)
-        {
-            Alumno n = o as Alumno;
-            return Legajo > n.Legajo;
-        }
-        
 
-        public bool SosMenor(IComparable o)
+        public bool SosMenor(Persona comparable)
         {
-            Alumno n = o as Alumno;
-            return Legajo < n.Legajo;
+            return Estrategia.SosMenor(this, comparable);
         }
-       
+
+        public bool SosMayor(Persona comparable)
+        {
+            return Estrategia.SosMayor(this, comparable);
+        }
+
         public override string ToString()
         {
             return string.Format("[Alumno: Nombre={0} Legajo= {1} DNI= {2} Promedio= {3}]", Nombre, legajo, Dni, Promedio);
         }
     }
+
 }

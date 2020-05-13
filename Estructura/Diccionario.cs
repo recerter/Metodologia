@@ -53,7 +53,7 @@ namespace Metodologia.Estructura
             return conjunto.Almacenamiento.Count;
         }
 
-        public object Maximo()
+        public IComparable Maximo()
         {
             IComparable max = (IComparable)(conjunto.Almacenamiento[0]);
             foreach (IComparable v in conjunto.Almacenamiento)
@@ -64,7 +64,7 @@ namespace Metodologia.Estructura
             return max;
         }
 
-        public object Minimo()
+        public IComparable Minimo()
         {
             IComparable min = (IComparable)(conjunto.Almacenamiento[0]);
             foreach (IComparable v in conjunto.Almacenamiento)

@@ -6,8 +6,8 @@ namespace Metodologia.Estructura
 {
     public interface IComparable
     {
-        public bool SosIgual(object o);
-        public bool SosMenor(object o);
-        public bool SosMayor(object o);
+        public bool SosIgual(IComparable o);
+        public bool SosMenor(IComparable o);
+        public bool SosMayor(IComparable o);
     }
 }

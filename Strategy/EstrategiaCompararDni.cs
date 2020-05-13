@@ -17,7 +17,7 @@ namespace Metodologia.Strategy
             return ((Persona)a).Dni > ((Persona)b).Dni;
         }
 
-        public bool Sosmenor(Estructura.IComparable a, Estructura.IComparable b)
+        public bool SosMenor(Estructura.IComparable a, Estructura.IComparable b)
         {
             return ((Persona)a).Dni < ((Persona)b).Dni;
         }

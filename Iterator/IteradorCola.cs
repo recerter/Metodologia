@@ -15,7 +15,7 @@ namespace Metodologia.Iterator
         }
         public bool End()
         {
-            return actual < this.lista.Cuantos() ? false : true;
+            return lista.isEmpty();
         }
 
         public void First()
@@ -30,7 +30,7 @@ namespace Metodologia.Iterator
 
         public object Next()
         {
-            var anterior = this.lista.Pop();
+            var anterior = this.lista.PopX(actual);
             actual++;
             return anterior;
         }

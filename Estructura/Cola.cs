@@ -7,24 +7,29 @@ namespace Metodologia.Estructura
 {
     public class Cola : IColeccionable
     {
-        readonly List<object> elementos;
+        readonly List<IComparable> elementos;
         public Cola()
         {
-            elementos = new List<object>();
+            elementos = new List<IComparable>();
         }
 
-        public void Push(object value)
+        public void Push(IComparable value)
         {
             elementos.Add(value);
         }
-        public object Pop()
+        public IComparable Pop()
         {
             var value = elementos[0];
             elementos.RemoveAt(0);
             return value;
         }
+        public IComparable PopX(int puntero)
+        {
+            IComparable firstCola = this.elementos[puntero];
+            return firstCola;
+        }
 
-        public object Top()
+        public IComparable Top()
         {
             return elementos[0];
         }
@@ -38,9 +43,9 @@ namespace Metodologia.Estructura
             return elementos.Count;
         }
 
-        public object Minimo()
+        public IComparable Minimo()
         {
-            object min = elementos[0];
+            IComparable min = elementos[0];
             foreach (IComparable e in elementos)
             {
                 if (e.SosMenor(min))
@@ -49,9 +54,9 @@ namespace Metodologia.Estructura
             return min;
         }
 
-        public object Maximo()
+        public IComparable Maximo()
         {
-            object max = elementos[0];
+            IComparable max = elementos[0];
             foreach (IComparable e in elementos)
             {
                 if (e.SosMayor(max))

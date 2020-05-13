@@ -17,7 +17,7 @@ namespace Metodologia.Strategy
             return ((Alumno)a).Legajo > ((Alumno)b).Legajo;
         }
 
-        public bool Sosmenor(Estructura.IComparable a, Estructura.IComparable b)
+        public bool SosMenor(Estructura.IComparable a, Estructura.IComparable b)
         {
             return ((Alumno)a).Legajo < ((Alumno)b).Legajo;
         }

@@ -58,26 +58,20 @@ namespace Metodologia.Estructura
             Estrategia = new EstrategiaCompararNombre();
         }
 
-        public bool SosIgual(object o)
+        public bool SosIgual(IComparable o)
         {
-            Persona n = o as Persona;
-            return Dni == n.Dni;
+            return Estrategia.SosIgual(this, (Persona)o);
         }
 
-        public bool SosMenor(object o)
+        public bool SosMenor(IComparable o)
         {
-            Persona n = o as Persona;
-            return Dni < n.Dni;
+            return Estrategia.SosMenor(this, (Persona)o);
         }
 
-        public bool SosMayor(object o)
+        public bool SosMayor(IComparable o)
         {
-            Persona n = o as Persona;
-            return Dni > n.Dni;
-        }
-        public override string ToString()
-        {
-            return string.Format("[Persona Nombre={0} DNI= {1}]", nombre, dni);
-        }
+             return Estrategia.SosMayor(this, (Persona)o);
+         }
+       
     }
 }

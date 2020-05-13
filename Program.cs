@@ -7,7 +7,7 @@ namespace Metodologia
         static void Main(string[] args)
         {
             Console.WriteLine("Program Principal");
-            Iterator.Main.Run();
+            Strategy.Main.Run();
         }
     }
 }
