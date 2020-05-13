@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Metodologia.Iterator;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,7 +7,7 @@ namespace Metodologia.Estructura
 {
     public class Diccionario : IColeccionable
     {
-        Conjunto conjunto;
+        readonly Conjunto conjunto;
         int clave = 0;
         public Diccionario()
         {
@@ -72,6 +73,11 @@ namespace Metodologia.Estructura
                     min = v;
             }
             return min;
+        }
+
+        public IIteradorColeccion CrearIterador()
+        {
+            return new IteradorDiccionario(this);
         }
     }
 }

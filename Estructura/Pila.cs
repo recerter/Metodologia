@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Metodologia.Iterator;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -72,6 +73,11 @@ namespace Metodologia.Estructura
                     return true;
             }
             return false;
+        }
+
+        public IIteradorColeccion CrearIterador()
+        {
+            return new IteradorPila(this);
         }
     }
 }

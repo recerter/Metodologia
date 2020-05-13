@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Metodologia.Iterator;
 
 namespace Metodologia.Estructura
 {
-    public interface IColeccionable
+    public interface IColeccionable : IIterador
     {
         public int Cuantos();
         public object Minimo();

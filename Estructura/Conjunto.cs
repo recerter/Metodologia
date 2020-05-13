@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Metodologia.Iterator;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,7 +7,7 @@ namespace Metodologia.Estructura
 {
     public class Conjunto : IColeccionable
     {
-        List<object> almacenamiento;
+        private List<object> almacenamiento;
         public List<object> Almacenamiento { get { return almacenamiento; } private set { this.almacenamiento = value; } }
 
         public Conjunto()
@@ -63,6 +64,11 @@ namespace Metodologia.Estructura
                     min = e;
             }
             return min;
+        }
+
+        public IIteradorColeccion CrearIterador()
+        {
+            return new IteradorConjunto(this);
         }
     }
 }

@@ -6,7 +6,8 @@ namespace Metodologia
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Program Principal");
+            Iterator.Main.Run();
         }
     }
 }

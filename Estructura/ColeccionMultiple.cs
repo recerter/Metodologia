@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Metodologia.Iterator;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -25,6 +26,11 @@ namespace Metodologia.Estructura
             if (pila.Contiene(o) || cola.Contiene(o))
                 return true;
             return false;
+        }
+
+        public IIteradorColeccion CrearIterador()
+        {
+            throw new NotImplementedException();
         }
 
         public int Cuantos()

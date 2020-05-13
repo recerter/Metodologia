@@ -39,20 +39,20 @@ namespace Metodologia.Estructura
             }
         }
 
-        public new bool SosIgual(IComparable o)
+        public bool SosIgual(IComparable o)
         {
             Alumno n = o as Alumno;
             return Legajo == n.Legajo;
         }
         
-        public new bool SosMayor(IComparable o)
+        public bool SosMayor(IComparable o)
         {
             Alumno n = o as Alumno;
             return Legajo > n.Legajo;
         }
         
 
-        public new bool SosMenor(IComparable o)
+        public bool SosMenor(IComparable o)
         {
             Alumno n = o as Alumno;
             return Legajo < n.Legajo;
