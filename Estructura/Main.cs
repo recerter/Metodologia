@@ -6,7 +6,7 @@ namespace Metodologia.Estructura
 {
     class Main
     {
-        readonly static Random r = new Random(DateTime.Now.Millisecond);
+        public static Random r = new Random(DateTime.Now.Millisecond);
 
 
         public static void Llenar(IColeccionable o)
