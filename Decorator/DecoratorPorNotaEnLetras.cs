@@ -17,7 +17,7 @@ namespace Metodologia.Decorator
             return decoratedCalification;
         }
 
-        private string LetrasPorNumeros(int aConvertir)
+        public string LetrasPorNumeros(int aConvertir)
         {
             string[] numerosConvertidos = { "CERO", "UNO", "DOS", "TRES", "CUATRO", "CINCO", "SEIS", "SIETE", "OCHO", "NUEVE", "DIEZ" };
             return numerosConvertidos[aConvertir];

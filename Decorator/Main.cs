@@ -36,7 +36,13 @@ namespace Metodologia.Decorator
             Console.WriteLine(imprimir);
             Console.ReadKey();
 
-            imprimir = d.ImprimirDecorator();
+            DecoratorPorRecuadroConAsteriscosCompleto e = new DecoratorPorRecuadroConAsteriscosCompleto(c.estudiante);
+            imprimir = new DecoratorPorRecuadroConAsteriscosCompleto(adaptado).ImprimirDecorator();
+            Console.Clear();
+            Console.WriteLine(imprimir);
+            Console.ReadKey();
+
+            imprimir = e.ImprimirDecorator();
             Console.Clear();
             Console.WriteLine(imprimir);
             Console.ReadKey();
