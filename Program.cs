@@ -7,7 +7,7 @@ namespace Metodologia
         static void Main(string[] args)
         {
             Console.WriteLine("Program Principal");
-            Observer.Main.Run();
+            Adapter.Main.Run();
         }
     }
 }

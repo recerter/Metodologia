@@ -2,14 +2,16 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Metodologia.Decorator;
 
 
 namespace Metodologia.Estructura
 {
-    public class Alumno:Persona, IComparable
+    public class Alumno:Persona, IComparable,IImprimirDecorator
     {
         private int legajo;
         private int promedio;
+        private double calificacion;
 
         public Alumno(string nombre, int dni, int legajo, int promedio) : base(nombre, dni)
         {
@@ -40,6 +42,26 @@ namespace Metodologia.Estructura
                 this.promedio = value;
             }
         }
+        public double Calificacion
+        {
+            get
+            {
+                return this.calificacion;
+            }
+            set{
+                this.calificacion = value;
+            }
+        }
+
+        public string MostrarCalificacion()
+        {
+            return this.Nombre + "\t" + this.Calificacion;
+        }
+
+        public int ResponderPregunta(int pregunta)
+        {
+            return new Random().Next(1, 3);
+        }
 
         public bool SosIgual(Alumno comparable)
         {
@@ -59,6 +81,11 @@ namespace Metodologia.Estructura
         public override string ToString()
         {
             return string.Format("[Alumno: Nombre={0} Legajo= {1} DNI= {2} Promedio= {3}]", Nombre, legajo, Dni, Promedio);
+        }
+
+        public string ImprimirDecorator()
+        {
+            throw new NotImplementedException();
         }
     }
 

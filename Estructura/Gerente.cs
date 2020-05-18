@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Metodologia.Estructura
 {
-    class Gerente:IObservador
+    public class Gerente:IObservador
     {
         private List<Vendedor> mejores;
 

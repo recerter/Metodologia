@@ -5,12 +5,14 @@ using Metodologia.Estructura;
 
 namespace Metodologia.FactoryMethod
 {
-    public class FabricaDeAlumnos : IFabricaDeComparables
+    class FabricaDeAlumnoMuyEstudioso : IFabricaDeComparables
     {
         public Estructura.IComparable CrearAleatorio()
         {
             GeneradorDeDatosAleatorios random = new GeneradorDeDatosAleatorios();
-            return new Alumno(random.StringAleatorio(6), Convert.ToInt32(random.NumeroAleatorio(99999)), Convert.ToInt32(random.NumeroAleatorio(99999)), Convert.ToInt32(random.NumeroAleatorio(10)));
+            AlumnoMuyEstudioso registro = new AlumnoMuyEstudioso(random.StringAleatorio(6), Convert.ToInt32(random.NumeroAleatorio(99999)), Convert.ToInt32(random.NumeroAleatorio(99999)), Convert.ToInt32(random.NumeroAleatorio(10)));
+            registro.Calificacion = Convert.ToDouble(random.NumeroAleatorio(10));
+            return registro;
         }
 
         public Estructura.IComparable CrearPorTeclado()
@@ -23,8 +25,11 @@ namespace Metodologia.FactoryMethod
             string legajo = Console.ReadLine();
             Console.Write("\nIngrese un Promedio: ");
             string promedio = Console.ReadLine();
-
-            return new Alumno(nombre, Convert.ToInt32(documento), Convert.ToInt32(legajo), Convert.ToInt32(promedio));
+            AlumnoMuyEstudioso registro = new AlumnoMuyEstudioso(nombre, Convert.ToInt32(documento), Convert.ToInt32(legajo), Convert.ToInt32(promedio));
+            Console.Write("Por favor, ingrese una Calificacion: ");
+            string calificacion = Console.ReadLine();
+            registro.Calificacion = Convert.ToDouble(calificacion);
+            return registro;
         }
     }
 }
