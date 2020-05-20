@@ -13,7 +13,10 @@ namespace Metodologia.Decorator
         }
         public override string ImprimirDecorator()
         {
-            string decoratedCalification = base.estudiante.showResult() + "(" + LetrasPorNumeros(base.estudiante.getScore()) + ")";
+            string showCalification = estudiante.showResult();
+            string[] splitCalification = showCalification.Split('\t');
+            
+            string decoratedCalification = base.estudiante.showResult() + "(" + LetrasPorNumeros(Convert.ToInt32(splitCalification[1])) + ")";
             return decoratedCalification;
         }
 

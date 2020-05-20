@@ -17,7 +17,7 @@ namespace Metodologia.Adapter
 	{
 		string getName();
 		int yourAnswerIs(int question);
-		int getScore();
+		
 		void setScore(int score);
 		string showResult();
 		bool equals(Student student);

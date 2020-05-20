@@ -13,12 +13,14 @@ namespace Metodologia.Decorator
         }
         public override string ImprimirDecorator()
         {
+            string showCalification = estudiante.showResult();
+            string[] splitCalification = showCalification.Split('\t');
             string decoratedCalification;
-            if (base.estudiante.getScore() >= 7)
+            if (Convert.ToInt32(splitCalification[1]) >= 7)
             {
                 decoratedCalification = base.estudiante.showResult() + "(PROMOCION)";
             }
-            else if (base.estudiante.getScore() >= 4)
+            else if (Convert.ToInt32(splitCalification[1]) >= 4)
             {
                 decoratedCalification = base.estudiante.showResult() + "(APROBADO)";
             }

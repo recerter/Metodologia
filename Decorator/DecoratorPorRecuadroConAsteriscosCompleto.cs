@@ -19,11 +19,11 @@ namespace Metodologia.Decorator
             string asteriscos = "";
             int contador = 1;
             string decoratedPromocion;
-            if (alumno.getScore() >= 7)
+            if (Convert.ToInt32(splitCalification[1]) >= 7)
             {
                 decoratedPromocion = "(PROMOCION)";
             }
-            else if (alumno.getScore() >= 4)
+            else if (Convert.ToInt32(splitCalification[1]) >= 4)
             {
                 decoratedPromocion = "(APROBADO)";
             }
@@ -35,7 +35,7 @@ namespace Metodologia.Decorator
             asteriscos += "*************************************************";
 
             string decoratedCalification = asteriscos + "\n" +
-               "*\t" +contador+")"+ splitCalification[0] + " (" + alumno.Adaptado.Legajo + ") " + "\t" + splitCalification[1] + "(" + LetrasPorNumeros(alumno.getScore()) + ")"+ decoratedPromocion + "\t*" +
+               "*\t" +contador+")"+ splitCalification[0] + " (" + alumno.Adaptado.Legajo + ") " + "\t" + splitCalification[1] + "(" + LetrasPorNumeros(Convert.ToInt32(splitCalification[1])) + ")"+ decoratedPromocion + "\t*" +
                "\n" + asteriscos;
             contador++;
             return decoratedCalification;

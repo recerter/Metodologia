@@ -28,25 +28,27 @@ namespace Metodologia.Adapter
         }
         public bool equals(Student student)
         {
-            return Adaptado.Calificacion.Equals(student.getScore());
+            string showCalification = student.showResult();
+            string[] splitCalification = showCalification.Split('\t');
+            return Adaptado.Calificacion.Equals(Convert.ToInt32(splitCalification[1]));
         }
 
         public string getName()
         {
             return Adaptado.Nombre;
         }
-        public int getScore()
-        {
-            return (int)Adaptado.Calificacion;
-        }
         public bool greaterThan(Student student)
         {
-            return Adaptado.Calificacion > student.getScore() ? true : false;
+            string showCalification = student.showResult();
+            string[] splitCalification = showCalification.Split('\t');
+            return Adaptado.Calificacion > Convert.ToInt32(splitCalification[1]) ? true : false;
         }
 
         public bool lessThan(Student student)
         {
-            return Adaptado.Calificacion < student.getScore() ? true : false;
+            string showCalification = student.showResult();
+            string[] splitCalification = showCalification.Split('\t');
+            return Adaptado.Calificacion < Convert.ToInt32(splitCalification[1]) ? true : false;
         }
 
         public void setScore(int score)

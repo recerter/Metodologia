@@ -14,7 +14,7 @@ namespace Metodologia.Observer
         public static void Run()
         {
             Cola newCola = new Cola();
-            FactoryMethod.Main.Llenar(newCola, 4); //Se le pasa el 4 ya que es la fabrica de Vendedores
+            FactoryMethod.Main.Llenar(newCola, 4); //4 Fabrica de Vendedores
             Gerente gerente = new Gerente();
             IIteradorColeccion iter = newCola.CrearIterador();
             while (!iter.End())
