@@ -1,14 +1,18 @@
-﻿using Metodologia.Iterator;
+﻿using Metodologia.Command;
+using Metodologia.Iterator;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Metodologia.Estructura
 {
-    public class Conjunto : IColeccionable
+    public class Conjunto : IColeccionable, IIterador, IOrdenable
     {
         private List<IComparable> almacenamiento;
         public List<IComparable> Almacenamiento { get { return almacenamiento; } private set { this.almacenamiento = value; } }
+        public IOrdenEnAula1 OrdenInicioEnAula;
+        public IOrdenEnAula1 OrdenEnAulaLlena;
+        public IOrdenEnAula2 OrdenLlegaAlumno;
 
         public Conjunto()
         {
@@ -70,6 +74,21 @@ namespace Metodologia.Estructura
         {
             return new IteradorConjunto(this);
         }
-        
+
+        public void SetOrdenInicio(IOrdenEnAula1 o)
+        {
+            OrdenInicioEnAula = o;
+
+        }
+
+        public void SetOrdenLlegaAlumno(IOrdenEnAula2 o)
+        {
+            OrdenLlegaAlumno = o;
+        }
+
+        public void SetOrdenAulaLlena(IOrdenEnAula1 o)
+        {
+            OrdenEnAulaLlena = o;
+        }
     }
 }

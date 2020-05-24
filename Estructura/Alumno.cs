@@ -87,6 +87,7 @@ namespace Metodologia.Estructura
         {
             return new DecoratorPorRecuadroConAsteriscosCompleto(new AdapterStudent(this)).ImprimirDecorator();
         }
+
     }
 
 }

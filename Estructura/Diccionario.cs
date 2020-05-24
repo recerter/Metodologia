@@ -1,13 +1,18 @@
-﻿using Metodologia.Iterator;
+﻿using Metodologia.Command;
+using Metodologia.Iterator;
+using Metodologia.Observer;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Metodologia.Estructura
 {
-    public class Diccionario : IColeccionable
+    public class Diccionario : IColeccionable, IIterador, IOrdenable
     {
         readonly Conjunto conjunto;
+        public IOrdenEnAula1 OrdenInicioEnAula;
+        public IOrdenEnAula1 OrdenEnAulaLlena;
+        public IOrdenEnAula2 OrdenLlegaAlumno;
         int clave = 0;
         public Diccionario()
         {
@@ -78,6 +83,22 @@ namespace Metodologia.Estructura
         public IIteradorColeccion CrearIterador()
         {
             return new IteradorDiccionario(this);
+        }
+
+        public void SetOrdenInicio(IOrdenEnAula1 o)
+        {
+            OrdenInicioEnAula = o;
+
+        }
+
+        public void SetOrdenLlegaAlumno(IOrdenEnAula2 o)
+        {
+            OrdenLlegaAlumno = o;
+        }
+
+        public void SetOrdenAulaLlena(IOrdenEnAula1 o)
+        {
+            OrdenEnAulaLlena = o;
         }
     }
 }
