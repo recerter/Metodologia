@@ -1,22 +1,20 @@
 ﻿using Metodologia.ChainOfResponsability;
+using Metodologia.Composite;
 using Metodologia.Estructura;
-using Metodologia.Proxy;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Metodologia.FactoryMethod
 {
-    class FabricaDeAlumnoMuyEstudiosoProxy : IFabricaDeComparables
+    public class FabricaDeAlumnoCompuesto : IFabricaDeComparables
     {
         public Estructura.IComparable CrearAleatorio()
         {
             Manejadores generador = new LectorDeDatos(null);
             generador = GeneradorDeDatosAleatorios.getInstance(generador);
             generador = LectorDeArchivos.getInstance(generador);
-            AlumnoMuyEstudiosoProxy registro = new AlumnoMuyEstudiosoProxy(generador.StringAleatorio(6), generador.NumeroAleatorio(99999), generador.NumeroAleatorio(99999), generador.NumeroAleatorio(10));
-            registro.Calificacion = generador.NumeroAleatorio(10);
-            return registro;
+            return new AlumnoCompuesto(generador.StringAleatorio(6), (int)generador.NumeroDesdeArchivo(990000), generador.NumeroAleatorio(99999), generador.NumeroAleatorio(10));
         }
 
         public Estructura.IComparable CrearPorTeclado()
@@ -30,13 +28,10 @@ namespace Metodologia.FactoryMethod
             int documento = generador.NumeroPorTeclado();
             Console.Write("\nIngrese un Legajo: ");
             int legajo = generador.NumeroPorTeclado();
-            Console.Write("\nIngrese un Promedio: ");
-            int promedio = generador.NumeroPorTeclado();
-            AlumnoMuyEstudiosoProxy registro = new AlumnoMuyEstudiosoProxy(nombre, documento, legajo, promedio);
-            Console.Write("Por favor, ingrese una Calificacion: ");
+            Console.Write("\nIngrese un Calificacion: ");
             int calificacion = generador.NumeroPorTeclado();
-            registro.Calificacion = calificacion;
-            return registro;
+
+            return new AlumnoCompuesto(nombre, documento, legajo, calificacion);
         }
     }
 }

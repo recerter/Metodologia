@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Text;
 using Metodologia.Adapter;
+using Metodologia.Estructura;
 
 namespace Metodologia.Decorator
 {
     class DecoratorPorRecuadroConAsteriscos:AbsDecoratorAdicionales
     {
-        public DecoratorPorRecuadroConAsteriscos(Student estudiante)
+        public DecoratorPorRecuadroConAsteriscos(Alumno estudiante)
         {
             base.estudiante = estudiante;
         }
@@ -15,11 +16,11 @@ namespace Metodologia.Decorator
         public override string ImprimirDecorator()
         {
             string asteriscos = "";
-            for (int i = 0; i < base.estudiante.showResult().Length; i++) { asteriscos += "*"; }
+            for (int i = 0; i < base.estudiante.MostrarCalificacion().Length; i++) { asteriscos += "*"; }
             asteriscos += "*****************";
 
             string decoratedCalification = asteriscos + "\n" +
-               "*\t" + base.estudiante.showResult() + "\t*" +
+               "*\t" + base.estudiante.MostrarCalificacion() + "\t*" +
                "\n" + asteriscos;
             return decoratedCalification;
         }

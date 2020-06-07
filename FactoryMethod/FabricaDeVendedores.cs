@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Metodologia.ChainOfResponsability;
 using Metodologia.Estructura;
 
 namespace Metodologia.FactoryMethod
@@ -9,20 +10,24 @@ namespace Metodologia.FactoryMethod
     {
         public Estructura.IComparable CrearAleatorio()
         {
-            GeneradorDeDatosAleatorios random = new GeneradorDeDatosAleatorios();
-            return new Vendedor(random.StringAleatorio(10), Convert.ToInt32(random.NumeroAleatorio(99999)), Convert.ToDouble(random.NumeroAleatorio(99999)));
+            Manejadores generador = new LectorDeDatos(null);
+            generador = GeneradorDeDatosAleatorios.getInstance(generador);
+            generador = LectorDeArchivos.getInstance(generador);
+            return new Vendedor(generador.StringDesdeArchivo(10), generador.NumeroAleatorio(420000), generador.NumeroDesdeArchivo(6000));
         }
 
         public Estructura.IComparable CrearPorTeclado()
         {
+            Manejadores generador = new LectorDeDatos(null);
+            generador = GeneradorDeDatosAleatorios.getInstance(generador);
+            generador = LectorDeArchivos.getInstance(generador);
             Console.Write("Ingrese un Nombre: ");
-            string nombre = new LectorDeDatos().StringPorTeclado();
+            string nombre = generador.StringPorTeclado();
             Console.Write("\nIngrese un Documento: ");
-            int dni = new LectorDeDatos().NumeroPorTeclado();
+            int dni = generador.NumeroPorTeclado();
             Console.Write("\nIngrese un Sueldo Basico: ");
-            double sueldo = new LectorDeDatos().NumeroPorTeclado();
-            Vendedor newVendedor = new Vendedor(nombre, dni, sueldo);
-            return newVendedor;
+            double sueldo = generador.NumeroPorTeclado();
+            return new Vendedor(nombre, dni, sueldo);
         }
     }
 }

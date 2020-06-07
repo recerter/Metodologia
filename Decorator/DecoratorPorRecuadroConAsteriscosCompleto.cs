@@ -2,28 +2,26 @@
 using System.Collections.Generic;
 using System.Text;
 using Metodologia.Adapter;
+using Metodologia.Estructura;
 
 namespace Metodologia.Decorator
 {
     public class DecoratorPorRecuadroConAsteriscosCompleto: AbsDecoratorAdicionales
     {
-        public DecoratorPorRecuadroConAsteriscosCompleto(Student estudiante)
+        public DecoratorPorRecuadroConAsteriscosCompleto(Alumno estudiante)
         {
             base.estudiante = estudiante;
         }
         public override string ImprimirDecorator()
         {
-            AdapterStudent alumno = (AdapterStudent)base.estudiante;
-            string showCalification = alumno.showResult();
-            string[] splitCalification = showCalification.Split('\t');
             string asteriscos = "";
             int contador = 1;
             string decoratedPromocion;
-            if (Convert.ToInt32(splitCalification[1]) >= 7)
+            if (estudiante.Calificacion >= 7)
             {
                 decoratedPromocion = "(PROMOCION)";
             }
-            else if (Convert.ToInt32(splitCalification[1]) >= 4)
+            else if (estudiante.Calificacion >= 4)
             {
                 decoratedPromocion = "(APROBADO)";
             }
@@ -31,11 +29,11 @@ namespace Metodologia.Decorator
             {
                 decoratedPromocion = "(DESAPROBADO)";
             }
-            for (int i = 0; i < base.estudiante.showResult().Length; i++) { asteriscos += "*"; }
+            for (int i = 0; i < base.estudiante.MostrarCalificacion().Length; i++) { asteriscos += "*"; }
             asteriscos += "*************************************************";
 
             string decoratedCalification = asteriscos + "\n" +
-               "*\t" +contador+")"+ splitCalification[0] + " (" + alumno.Adaptado.Legajo + ") " + "\t" + splitCalification[1] + "(" + LetrasPorNumeros(Convert.ToInt32(splitCalification[1])) + ")"+ decoratedPromocion + "\t*" +
+               "*\t" +contador+")"+ estudiante.Nombre + " (" + estudiante.Legajo + ") " + "\t" + estudiante.Calificacion + "(" + LetrasPorNumeros(estudiante.Calificacion) + ")"+ decoratedPromocion + "\t*" +
                "\n" + asteriscos;
             contador++;
             return decoratedCalification;

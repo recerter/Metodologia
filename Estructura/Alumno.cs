@@ -11,7 +11,7 @@ namespace Metodologia.Estructura
     {
         private int legajo;
         private int promedio;
-        private double calificacion;
+        private int calificacion;
 
         public Alumno(string nombre, int dni, int legajo, int promedio) : base(nombre, dni)
         {
@@ -42,7 +42,7 @@ namespace Metodologia.Estructura
                 this.promedio = value;
             }
         }
-        public double Calificacion
+        public int Calificacion
         {
             get
             {
@@ -55,7 +55,7 @@ namespace Metodologia.Estructura
 
         public string MostrarCalificacion()
         {
-            return this.Nombre + "\t" + this.Calificacion;
+            return Calificacion.ToString();
         }
 
         public int ResponderPregunta(int pregunta)
@@ -85,7 +85,7 @@ namespace Metodologia.Estructura
 
         public string ImprimirDecorator()
         {
-            return new DecoratorPorRecuadroConAsteriscosCompleto(new AdapterStudent(this)).ImprimirDecorator();
+            return new DecoratorPorRecuadroConAsteriscosCompleto(this).ImprimirDecorator();
         }
 
     }

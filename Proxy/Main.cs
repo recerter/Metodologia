@@ -12,15 +12,15 @@ namespace Metodologia.Proxy
         {
 
             Teacher maestro = new Teacher();
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 2; i++)
             {
-                Student adaptado = (AlumnoProxy)new FabricaDeAlumnosProxy().CrearAleatorio();
+                Student adaptado = new AdapterStudent((AlumnoProxy)new FabricaDeAlumnosProxy().CrearAleatorio());
                 maestro.goToClass(adaptado);
             }
             for (int i = 0; i < 10; i++)
             {
-                Student adaptado = (AlumnoMuyEstudiosoProxy)new FabricaDeAlumnoMuyEstudiosoProxy().CrearAleatorio();
-                maestro.goToClass(adaptado);
+                Student adaptado1 = new AdapterStudent((AlumnoMuyEstudiosoProxy)new FabricaDeAlumnoMuyEstudiosoProxy().CrearAleatorio());
+                maestro.goToClass(adaptado1);
             }
 
             maestro.teachingAClass();

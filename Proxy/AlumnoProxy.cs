@@ -6,16 +6,16 @@ using System.Text;
 
 namespace Metodologia.Proxy
 {
-    public class AlumnoProxy : Student, Estructura.IComparable
+    public class AlumnoProxy : Alumno
     {
         private Alumno proxyAlumno = null;
         private string nombre;
         private int dni;
         private int legajo;
         private int promedio;
-        public double Calificacion;
+        public new int Calificacion;
 
-        public AlumnoProxy(string nombre, int dni, int legajo, int promedio)
+        public AlumnoProxy(string nombre, int dni, int legajo, int promedio): base(nombre, dni,legajo, promedio)
         {
             this.nombre = nombre;
             this.dni = dni;
@@ -34,80 +34,8 @@ namespace Metodologia.Proxy
                 this.proxyAlumno = value;
             }
         }
-        public int Legajo
-        {
-            get
-            {
-                return this.legajo;
-            }
-            set
-            {
-                this.legajo = value;
-            }
-        }
-        public int Promedio
-        {
-            get
-            {
-                return this.promedio;
-            }
-            set
-            {
-                this.promedio = value;
-            }
-        }
-        public bool equals(Student student)
-        {
-            string showCalification = student.showResult();
-            string[] splitCalification = showCalification.Split('\t');
-            return Calificacion.Equals(Convert.ToInt32(splitCalification[1]));
-        }
 
-        public string getName()
-        {
-            return nombre;
-        }
-
-        public bool greaterThan(Student student)
-        {
-            string showCalification = student.showResult();
-            string[] splitCalification = showCalification.Split('\t');
-            return Calificacion > Convert.ToInt32(splitCalification[1]) ? true : false;
-        }
-
-        public bool lessThan(Student student)
-        {
-            string showCalification = student.showResult();
-            string[] splitCalification = showCalification.Split('\t');
-            return Calificacion < Convert.ToInt32(splitCalification[1]) ? true : false;
-        }
-
-        public void setScore(int score)
-        {
-            Calificacion = score;
-        }
-
-        public string showResult()
-        {
-            return this.nombre + "\t" + this.Calificacion;
-        }
-
-        public bool SosIgual(Estructura.IComparable o)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool SosMayor(Estructura.IComparable o)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool SosMenor(Estructura.IComparable o)
-        {
-            throw new NotImplementedException();
-        }
-
-        public int yourAnswerIs(int question)
+        public int ResponderPregunta(int question)
         {
             if (ProxyAlumno == null)
             {

@@ -2,31 +2,30 @@
 using System.Collections.Generic;
 using System.Text;
 using Metodologia.Adapter;
+using Metodologia.Estructura;
 
 namespace Metodologia.Decorator
 {
     public class DecoratorPorPromocion : AbsDecoratorAdicionales
     {
-        public DecoratorPorPromocion(Student estudiante)
+        public DecoratorPorPromocion(Alumno estudiante)
         {
             base.estudiante = estudiante;
         }
         public override string ImprimirDecorator()
         {
-            string showCalification = estudiante.showResult();
-            string[] splitCalification = showCalification.Split('\t');
             string decoratedCalification;
-            if (Convert.ToInt32(splitCalification[1]) >= 7)
+            if (estudiante.Calificacion >= 7)
             {
-                decoratedCalification = base.estudiante.showResult() + "(PROMOCION)";
+                decoratedCalification = base.estudiante.MostrarCalificacion() + "(PROMOCION)";
             }
-            else if (Convert.ToInt32(splitCalification[1]) >= 4)
+            else if (estudiante.Calificacion >= 4)
             {
-                decoratedCalification = base.estudiante.showResult() + "(APROBADO)";
+                decoratedCalification = base.estudiante.MostrarCalificacion() + "(APROBADO)";
             }
             else
             {
-                decoratedCalification = base.estudiante.showResult() + "(DESAPROBADO)";
+                decoratedCalification = base.estudiante.MostrarCalificacion() + "(DESAPROBADO)";
             }
 
             return decoratedCalification;

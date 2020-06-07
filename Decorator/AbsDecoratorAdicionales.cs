@@ -8,7 +8,7 @@ namespace Metodologia.Decorator
 {
     public abstract class AbsDecoratorAdicionales : IImprimirDecorator
     {
-        public Student estudiante;
+        public Alumno estudiante;
 
         public abstract string ImprimirDecorator();
     }

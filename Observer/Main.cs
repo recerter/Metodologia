@@ -5,7 +5,7 @@ using Metodologia.Estructura;
 using Metodologia.Iterator;
 using Metodologia.FactoryMethod;
 using Metodologia.Strategy;
-
+using Metodologia.ChainOfResponsability;
 
 namespace Metodologia.Observer
 {
@@ -31,10 +31,12 @@ namespace Metodologia.Observer
         {
             double monto;
             IIteradorColeccion iter = o.CrearIterador();
+            Manejadores generador = new LectorDeDatos(null);
+            generador = GeneradorDeDatosAleatorios.getInstance(generador);
             while (!iter.End())
             {
                 Vendedor elemento = (Vendedor)iter.Next();
-                monto = new GeneradorDeDatosAleatorios().NumeroAleatorio(7000);
+                monto = generador.NumeroAleatorio(7000);
                 elemento.Venta(monto);
 
             }

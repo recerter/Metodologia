@@ -2,21 +2,19 @@
 using System.Collections.Generic;
 using System.Text;
 using Metodologia.Adapter;
+using Metodologia.Estructura;
 
 namespace Metodologia.Decorator
 {
     public class DecoratorPorLegajo:AbsDecoratorAdicionales
     {
-        public DecoratorPorLegajo(Student estudiante)
+        public DecoratorPorLegajo(Alumno estudiante)
         {
             base.estudiante = estudiante;
         }
         public override string ImprimirDecorator()
         {
-            AdapterStudent alumno = (AdapterStudent)base.estudiante;
-            string showCalification = alumno.showResult();
-            string[] splitCalification = showCalification.Split('\t');
-            string decoratedCalification = splitCalification[0] + " (" + alumno.Adaptado.Legajo + ") " + "\t" + splitCalification[1];
+            string decoratedCalification = estudiante.Nombre + " (" + estudiante.Legajo + ") " + "\t" + estudiante.Calificacion;
             return decoratedCalification;
         }
     }

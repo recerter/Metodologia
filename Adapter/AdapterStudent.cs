@@ -28,9 +28,7 @@ namespace Metodologia.Adapter
         }
         public bool equals(Student student)
         {
-            string showCalification = student.showResult();
-            string[] splitCalification = showCalification.Split('\t');
-            return Adaptado.Calificacion.Equals(Convert.ToInt32(splitCalification[1]));
+            return Adaptado.Calificacion.Equals(Convert.ToInt32(Adaptado.MostrarCalificacion()));
         }
 
         public string getName()
@@ -39,16 +37,12 @@ namespace Metodologia.Adapter
         }
         public bool greaterThan(Student student)
         {
-            string showCalification = student.showResult();
-            string[] splitCalification = showCalification.Split('\t');
-            return Adaptado.Calificacion > Convert.ToInt32(splitCalification[1]) ? true : false;
+            return adaptado.SosMayor(((AdapterStudent)(student)).adaptado);
         }
 
         public bool lessThan(Student student)
         {
-            string showCalification = student.showResult();
-            string[] splitCalification = showCalification.Split('\t');
-            return Adaptado.Calificacion < Convert.ToInt32(splitCalification[1]) ? true : false;
+            return adaptado.SosMenor(((AdapterStudent)(student)).adaptado);
         }
 
         public void setScore(int score)
@@ -58,7 +52,7 @@ namespace Metodologia.Adapter
 
         public string showResult()
         {
-            return Adaptado.MostrarCalificacion();
+            return Adaptado.ImprimirDecorator();
         }
 
         public int yourAnswerIs(int question)

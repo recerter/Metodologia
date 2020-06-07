@@ -27,13 +27,13 @@ namespace Metodologia.Command
                 case 1:
                     for (int i = 0; i < 20; i++)
                     {
-                        coleccion.Agregar(new FabricaDeAlumnos().CrearAleatorio());
+                        coleccion.Agregar(new FabricaDeAlumnosProxy().CrearAleatorio());
                     }
                     break;
                 case 2:
                     for (int i = 0; i < 20; i++)
                     {
-                        coleccion.Agregar(new FabricaDeAlumnoMuyEstudioso().CrearAleatorio());
+                        coleccion.Agregar(new FabricaDeAlumnoMuyEstudiosoProxy().CrearAleatorio());
                     }
                     break;
             }

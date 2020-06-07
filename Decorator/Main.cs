@@ -11,7 +11,7 @@ namespace Metodologia.Decorator
     {
         public static void Run()
         {
-            Student adaptado = new AdapterStudent((Alumno)new FabricaDeAlumnos().CrearAleatorio());
+            Alumno adaptado = (Alumno)new FabricaDeAlumnos().CrearAleatorio();
             DecoratorPorLegajo a = new DecoratorPorLegajo(adaptado);
             string imprimir = new DecoratorPorLegajo(adaptado).ImprimirDecorator();
             Console.Clear();
@@ -36,7 +36,7 @@ namespace Metodologia.Decorator
             Console.WriteLine(imprimir);
             Console.ReadKey();
 
-            DecoratorPorRecuadroConAsteriscosCompleto e = new DecoratorPorRecuadroConAsteriscosCompleto(c.estudiante);
+            DecoratorPorRecuadroConAsteriscosCompleto e = new DecoratorPorRecuadroConAsteriscosCompleto(d.estudiante);
             imprimir = new DecoratorPorRecuadroConAsteriscosCompleto(adaptado).ImprimirDecorator();
             Console.Clear();
             Console.WriteLine(imprimir);
