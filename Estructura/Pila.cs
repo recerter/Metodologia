@@ -33,6 +33,10 @@ namespace Metodologia.Estructura
             return firstPila;
         }
 
+        public void Del(int value)
+        {
+            elementos.RemoveAt(value);
+        }
         public IComparable Top()
         {
             return elementos[elementos.Count-1];
@@ -45,6 +49,14 @@ namespace Metodologia.Estructura
         public int Cuantos()
         {
             return elementos.Count;
+        }
+        public void PushAll(Pila newCola)
+        {
+            //elementos.CopyTo(newCola);
+            for (int i = 0; i < newCola.Cuantos(); i++)
+            {
+                this.elementos.Add(newCola.Pop());
+            }
         }
 
         public IComparable Minimo()

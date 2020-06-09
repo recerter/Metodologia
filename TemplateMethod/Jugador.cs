@@ -10,8 +10,9 @@ namespace Metodologia.TemplateMethod
         public List<Carta> cartas { get; set; }
         public int Puntaje { get; set; }
 
-        public Jugador()
+        public Jugador(string nombre, int dni) : base(nombre, dni)
         {
+            this.Puntaje = 0;
             cartas = new List<Carta>();
         }
     }

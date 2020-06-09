@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Metodologia.Iterator;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -9,6 +10,7 @@ namespace Metodologia.TemplateMethod
         public int Valor { get; set; }
         public string Simbolo { get; set; }
         public int PesoSimbolo { get; set; }
+        public int Prioridad { get; set; }
         public Carta(int valor, int pesoSimbolo)
         {
             Valor = valor;
@@ -25,7 +27,7 @@ namespace Metodologia.TemplateMethod
             Type obj = this.GetType();
             if (tipo.Equals(obj))
             {
-                return Valor.Equals(((Carta)o).Valor) && PesoSimbolo.Equals(((Carta)o).PesoSimbolo) ? true : false;
+                return Prioridad.Equals(((Carta)o).Prioridad) ? true : false;
             }
             return false;
         }
@@ -36,7 +38,7 @@ namespace Metodologia.TemplateMethod
             Type obj = this.GetType();
             if (tipo.Equals(obj))
             {
-                return Valor > ((Carta)o).Valor && PesoSimbolo <= ((Carta)o).PesoSimbolo ? true : false;
+                return Prioridad > ((Carta)o).Prioridad ? true : false;
             }
             return false;
         }
@@ -47,9 +49,14 @@ namespace Metodologia.TemplateMethod
             Type obj = this.GetType();
             if (tipo.Equals(obj))
             {
-                return Valor < ((Carta)o).Valor && PesoSimbolo < ((Carta)o).PesoSimbolo ? true : false;
+                return Prioridad < ((Carta)o).Prioridad ? true : false;
             }
             return false;
+        }
+
+        public override string ToString()
+        {
+            return string.Format("[Carta: {0} {1}]", Valor, Simbolo);
         }
     }
 }
