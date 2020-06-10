@@ -28,7 +28,7 @@ namespace Metodologia.Adapter
         }
         public bool equals(Student student)
         {
-            return Adaptado.Calificacion.Equals(Convert.ToInt32(Adaptado.MostrarCalificacion()));
+            return student.Equals(adaptado);
         }
 
         public string getName()
@@ -52,7 +52,7 @@ namespace Metodologia.Adapter
 
         public string showResult()
         {
-            return Adaptado.ImprimirDecorator();
+            return Adaptado.MostrarCalificacion();
         }
 
         public int yourAnswerIs(int question)
