@@ -12,39 +12,9 @@ namespace Metodologia.Decorator
         public static void Run()
         {
             Alumno adaptado = (Alumno)new FabricaDeAlumnos().CrearAleatorio();
-            DecoratorPorLegajo a = new DecoratorPorLegajo(adaptado);
-            string imprimir = new DecoratorPorLegajo(adaptado).ImprimirDecorator();
-            Console.Clear();
-            Console.WriteLine(imprimir);
-            Console.ReadKey();
-
-            DecoratorPorNotaEnLetras b = new DecoratorPorNotaEnLetras(a.estudiante);
-            imprimir = new DecoratorPorNotaEnLetras(adaptado).ImprimirDecorator();
-            Console.Clear();
-            Console.WriteLine(imprimir);
-            Console.ReadKey();
-
-            DecoratorPorPromocion c = new DecoratorPorPromocion(b.estudiante);
-            imprimir = new DecoratorPorPromocion(adaptado).ImprimirDecorator();
-            Console.Clear();
-            Console.WriteLine(imprimir);
-            Console.ReadKey();
-
-            DecoratorPorRecuadroConAsteriscos d = new DecoratorPorRecuadroConAsteriscos(c.estudiante);
-            imprimir = new DecoratorPorRecuadroConAsteriscos(adaptado).ImprimirDecorator();
-            Console.Clear();
-            Console.WriteLine(imprimir);
-            Console.ReadKey();
-
-            DecoratorPorRecuadroConAsteriscosCompleto e = new DecoratorPorRecuadroConAsteriscosCompleto(d.estudiante);
-            imprimir = new DecoratorPorRecuadroConAsteriscosCompleto(adaptado).ImprimirDecorator();
-            Console.Clear();
-            Console.WriteLine(imprimir);
-            Console.ReadKey();
-
-            imprimir = e.ImprimirDecorator();
-            Console.Clear();
-            Console.WriteLine(imprimir);
+            Alumno a = new DecoratorPorLegajo(adaptado);
+            
+            Console.WriteLine(a);
             Console.ReadKey();
         }
     }

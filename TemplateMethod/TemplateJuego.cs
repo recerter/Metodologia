@@ -11,7 +11,6 @@ namespace Metodologia.TemplateMethod
         public Jugador Player2 { get; set; }
         public Pila MazoCartas { get; set; }
         public abstract void Jugar();
-        
         public abstract void mezclarMazo(Pila mazo);
         public abstract void repartirCartasIniciales(Jugador player1, Jugador Player2);
         public abstract Carta jugarUnaMano(Pila mazo, Jugador player);

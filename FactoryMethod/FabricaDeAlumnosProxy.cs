@@ -7,7 +7,7 @@ using Metodologia.Proxy;
 
 namespace Metodologia.FactoryMethod
 {
-    class FabricaDeAlumnosProxy : IFabricaDeComparables
+    class FabricaDeAlumnosProxy : FabricaDeComparables
     {
         public Estructura.IComparable CrearAleatorio()
         {

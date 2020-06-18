@@ -7,7 +7,7 @@ using Metodologia.Adapter;
 
 namespace Metodologia.Estructura
 {
-    public class Alumno:Persona, IComparable,IImprimirDecorator
+    public class Alumno:Persona, IComparable
     {
         private int legajo;
         private int promedio;
@@ -19,8 +19,11 @@ namespace Metodologia.Estructura
             this.promedio = promedio;
             base.Estrategia = new EstrategiaCompararNombre();
         }
+        public Alumno()
+        {
 
-        public int Legajo
+        }
+        virtual public int Legajo
         {
             get
             {
@@ -53,12 +56,12 @@ namespace Metodologia.Estructura
             }
         }
 
-        public string MostrarCalificacion()
+        virtual public string MostrarCalificacion()
         {
-            return Calificacion.ToString();
+            return this.Nombre + "\t" + this.Calificacion;
         }
 
-        public int ResponderPregunta(int pregunta)
+        virtual public int ResponderPregunta(int pregunta)
         {
             return new Random().Next(1, 3);
         }
@@ -82,12 +85,6 @@ namespace Metodologia.Estructura
         {
             return string.Format("[Alumno: Nombre={0} Legajo= {1} DNI= {2} Promedio= {3}]", Nombre, legajo, Dni, Promedio);
         }
-
-        public string ImprimirDecorator()
-        {
-            return new DecoratorPorRecuadroConAsteriscosCompleto(this).ImprimirDecorator();
-        }
-
     }
 
 }

@@ -8,11 +8,10 @@ namespace Metodologia.Decorator
 {
     public class DecoratorPorNotaEnLetras:AbsDecoratorAdicionales
     {
-        public DecoratorPorNotaEnLetras(Alumno estudiante)
+        public DecoratorPorNotaEnLetras(Alumno estudiante) : base(estudiante)
         {
-            base.estudiante = estudiante;
         }
-        public override string ImprimirDecorator()
+        public override string MostrarCalificacion()
         {
             string decoratedCalification = base.estudiante.MostrarCalificacion() + "(" + LetrasPorNumeros(estudiante.Calificacion) + ")";
             return decoratedCalification;

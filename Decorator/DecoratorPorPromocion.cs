@@ -8,11 +8,10 @@ namespace Metodologia.Decorator
 {
     public class DecoratorPorPromocion : AbsDecoratorAdicionales
     {
-        public DecoratorPorPromocion(Alumno estudiante)
+        public DecoratorPorPromocion(Alumno estudiante) : base(estudiante)
         {
-            base.estudiante = estudiante;
         }
-        public override string ImprimirDecorator()
+        public override string MostrarCalificacion()
         {
             string decoratedCalification;
             if (estudiante.Calificacion >= 7)

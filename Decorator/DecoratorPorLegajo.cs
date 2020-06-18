@@ -8,14 +8,12 @@ namespace Metodologia.Decorator
 {
     public class DecoratorPorLegajo:AbsDecoratorAdicionales
     {
-        public DecoratorPorLegajo(Alumno estudiante)
+        public DecoratorPorLegajo(Alumno estudiante) : base(estudiante)
         {
-            base.estudiante = estudiante;
         }
-        public override string ImprimirDecorator()
+        public override string MostrarCalificacion()
         {
-            string decoratedCalification = estudiante.Nombre + " (" + estudiante.Legajo + ") " + "\t" + estudiante.Calificacion;
-            return decoratedCalification;
+            return estudiante.MostrarCalificacion() + "(s"+Legajo+"s)";
         }
     }
 }

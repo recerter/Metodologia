@@ -6,9 +6,9 @@ using Metodologia.Estructura;
 
 namespace Metodologia.FactoryMethod
 {
-    public class FabricaDeVendedores : IFabricaDeComparables
+    public class FabricaDeVendedores : FabricaDeComparables
     {
-        public Estructura.IComparable CrearAleatorio()
+        public override Estructura.IComparable CrearAleatorio()
         {
             Manejadores generador = new LectorDeDatos(null);
             generador = GeneradorDeDatosAleatorios.getInstance(generador);
@@ -16,7 +16,7 @@ namespace Metodologia.FactoryMethod
             return new Vendedor(generador.StringDesdeArchivo(10), generador.NumeroAleatorio(420000), generador.NumeroDesdeArchivo(6000));
         }
 
-        public Estructura.IComparable CrearPorTeclado()
+        public override Estructura.IComparable CrearPorTeclado()
         {
             Manejadores generador = new LectorDeDatos(null);
             generador = GeneradorDeDatosAleatorios.getInstance(generador);

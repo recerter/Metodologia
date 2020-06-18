@@ -8,11 +8,10 @@ namespace Metodologia.Decorator
 {
     public class DecoratorPorRecuadroConAsteriscosCompleto: AbsDecoratorAdicionales
     {
-        public DecoratorPorRecuadroConAsteriscosCompleto(Alumno estudiante)
+        public DecoratorPorRecuadroConAsteriscosCompleto(Alumno estudiante) : base(estudiante)
         {
-            base.estudiante = estudiante;
         }
-        public override string ImprimirDecorator()
+        public override string MostrarCalificacion()
         {
             string asteriscos = "";
             int contador = 1;

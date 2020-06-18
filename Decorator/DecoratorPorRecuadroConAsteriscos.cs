@@ -8,12 +8,11 @@ namespace Metodologia.Decorator
 {
     class DecoratorPorRecuadroConAsteriscos:AbsDecoratorAdicionales
     {
-        public DecoratorPorRecuadroConAsteriscos(Alumno estudiante)
+        public DecoratorPorRecuadroConAsteriscos(Alumno estudiante) : base(estudiante)
         {
-            base.estudiante = estudiante;
         }
 
-        public override string ImprimirDecorator()
+        public override string MostrarCalificacion()
         {
             string asteriscos = "";
             for (int i = 0; i < base.estudiante.MostrarCalificacion().Length; i++) { asteriscos += "*"; }

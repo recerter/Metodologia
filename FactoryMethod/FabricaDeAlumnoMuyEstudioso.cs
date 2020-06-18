@@ -6,7 +6,7 @@ using Metodologia.Estructura;
 
 namespace Metodologia.FactoryMethod
 {
-    class FabricaDeAlumnoMuyEstudioso : IFabricaDeComparables
+    class FabricaDeAlumnoMuyEstudioso : FabricaDeComparables
     {
         public Estructura.IComparable CrearAleatorio()
         {
